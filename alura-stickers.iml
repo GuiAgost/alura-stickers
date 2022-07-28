@@ -17,5 +17,13 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Emoji" level="project" />
+    <orderEntry type="library" name="emoji4j-6.0" level="project" />
+    <orderEntry type="library" name="hamcrest-2.2" level="project" />
+    <orderEntry type="library" name="jackson-annotations-2.13.3" level="project" />
+    <orderEntry type="library" name="jackson-core-2.13.3" level="project" />
+    <orderEntry type="library" name="jackson-databind-2.13.3" level="project" />
+    <orderEntry type="library" name="emoji-java-5.1.1" level="project" />
+    <orderEntry type="library" name="json-20220320" level="project" />
   </component>
 </module>

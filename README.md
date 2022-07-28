@@ -1,49 +1,18 @@
-# Imersão Alura Java 💻
+## Getting Started
 
-Esse é o meu primeiro projeto realizado pelo evento Imersão Java da [Alura](https://www.alura.com.br/). 🚀
+Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
-📚 São 5 aulas:
+## Folder Structure
 
-+ Aula 01 - Consumindo uma API de Filmes com Java;<br />
-+ Aula 02 - Gerando Figurinhas para o WhatsApp;<br />
-+ Aula 03 - Aula com foco em Orientação a Objetos, Refatoração e Encapsulamento;<br />
-+ Aula 04 - Criando nossa própria API com Spring;<br />
-+ Aula 05 - Publicando nossa API no Cloud;<br />
+The workspace contains two folders by default, where:
 
-👨‍🏫 Professores da Alura:
+- `src`: the folder to maintain sources
+- `lib`: the folder to maintain dependencies
 
-+ Jacqueline Oliveira<br />
-+ Alexandre Aquiles<br />
-+ Paulo Silveira<br />
+Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
-_________________________________________________________________________________________________
+> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
-AULA 01 - CONSUMINDO UMA API DE FILMES COM JAVA
+## Dependency Management
 
-👨🏽‍💻 Construindo...
-
-_________________________________________________________________________________________________
-
-AULA 02 - GERANDO FIGURINHAS PARA WHATSAPP
-
-👨🏽‍💻 Em breve será construído.
-
-_________________________________________________________________________________________________
-
-AULA 03 - LIGANDO AS PONTAS, REFATORAÇÃO E ORIENTAÇÃO A OBJETOS
-
-👨🏽‍💻 Em breve será construído.
-
-_________________________________________________________________________________________________
-
-AULA 04 - CRIANDO NOSSA PRÓPRIA API COM SPRING
-
-👨🏽‍💻 Em breve será construído.
-
-_________________________________________________________________________________________________
-
-AULA 05 - PUBLICANDO NOSSA API NO CLOUD
-
-👨🏽‍💻 Em breve será construído.
-
-
+The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
