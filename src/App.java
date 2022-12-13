@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class App {
     private static final String STAR_YELOW = "\u001b[m\u001B[33m\u2605\u001b[m";
-    private static final String TERRIBLE = "\u001b[m\u001B[33m\ud83c\udd96";
+    private static final String TERRIBLE = "\u001b[m\u001B[33m\uD83D\uDC4E";
 
     public static void main(String[] args) throws Exception {
         try (Scanner input = new Scanner(System.in)) {
@@ -33,32 +33,34 @@ public class App {
             List<Map<String, String>> listFilms = ExtractorImDbAPI.getFilms(url);
 
             // EXIBIR E MANIPULAR OS DADOS
-            var geradora = new GeradoraDeFigurinhas();
+            GeradoraDeFigurinhas geradora = new GeradoraDeFigurinhas();
             for (Map<String, String> films : listFilms) {
 
                 String urlImagem = films.get("image");
+                //String urlAterado = urlImagem.substring(0,116) + ".jpg";
                 String titulo = films.get("title");
                 String classificacao = films.get("imDbRating");
 
                 // PARA GERAR A IMAGEM FIGURINHA
                 InputStream inputStream = new URL(urlImagem).openStream(); // A PARTIR DA URL DA IMAGEM
-                geradora.cria(inputStream, titulo + ".png");
+                geradora.cria(inputStream, "saida/" + titulo + ".png");
+
 
                 // EXIBE O TITULO, URL DA IMAGEM E A CLASSIFICAÇÃO
                 System.out.println("\u001b[32;1m\u001b[4mTítulo:\u001b[m " + "\u001b[36;1m" + titulo + "\u001b[m");
                 //System.out.println("\u001b[34;1m\u001b[4mImagem:\u001b[m " + urlImagem);
 
-                float numberStar;
+                float numberStar = (float) Double.parseDouble(classificacao);
                 // SE A NOTA FOR VAZIA
                 if (films.get("imDbRating").isEmpty()) {
                     System.out.println("\u001b[30m\u001b[1m\u001b[4mClassificação Geral: 0.0" + " \u001b[m\u001B[33m\u001b[m");
-                    System.out.print(TERRIBLE);
+                    System.out.println(TERRIBLE);
+
                 } else {
                     System.out.println("\u001b[30m\u001b[1m\u001b[4mClassificação Geral: " + classificacao + " \u001b[m\u001B[33m\u001b[m");
-
-                    numberStar = (float) Double.parseDouble(classificacao);
                     for (int i = 1; i <= Math.abs(numberStar); i++) {
                         System.out.print(STAR_YELOW);
+
                     }
                 }
                 System.out.println("\n\n======================================================\n");
