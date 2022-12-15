@@ -17,7 +17,7 @@ public class GeradoraDeFigurinhas {
         // CRIA UMA NOVA IMAGEM COM MEMÓRIA COM TRANSPARÊNCIA E TAMANHO NOVO
         int largura = imagemOriginal.getWidth();
         int altura = imagemOriginal.getHeight();
-        int novaAltura = altura + 200;
+        int novaAltura = altura + 70;
         BufferedImage novaImagem = new BufferedImage(largura, novaAltura, BufferedImage.TRANSLUCENT);
 
         // COPIAR A IMAGEM ORIGINAL PRA NOVA IMAGEM (EM MEMÓRIA)
@@ -25,12 +25,13 @@ public class GeradoraDeFigurinhas {
         graphics.drawImage(imagemOriginal, 0, 0, null);
 
         // CONFIGURAR FONTE
-        Font font = new Font(Font.SANS_SERIF, Font.BOLD, 60);
+        Font font = new Font(Font.SANS_SERIF, Font.BOLD, 14);
         graphics.setColor(Color.GREEN);
         graphics.setFont(font);
 
         // ESCREVER UMA FRASE NA NOVA IMAGEM
-        graphics.drawString("TOPZERA", 200, novaAltura - 80);
+        graphics.drawString("TOPZERA", 35, novaAltura - 50);
+
 
         // ESCREVER A NOVA IMAGEM EM UM ARQUIVO
         ImageIO.write(novaImagem, "png", new File(nomeArquivo));
