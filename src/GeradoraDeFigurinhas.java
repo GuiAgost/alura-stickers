@@ -25,17 +25,20 @@ public class GeradoraDeFigurinhas {
         graphics.drawImage(imagemOriginal, 0, 0, null);
 
         // CONFIGURAR FONTE
-        Font font = new Font(Font.SANS_SERIF, Font.BOLD, 14);
+        //Font font = new Font(Font.SANS_SERIF, Font.BOLD, 14);
+        Font font = Font.createFont(Font.ROMAN_BASELINE, new File("fonts/ComicNeueSansID.ttf"))
+                .deriveFont(Font.PLAIN, 14);
         graphics.setColor(Color.GREEN);
         graphics.setFont(font);
 
         // ESCREVER UMA FRASE NA NOVA IMAGEM
         graphics.drawString("TOPZERA", 35, novaAltura - 50);
 
-
         // ESCREVER A NOVA IMAGEM EM UM ARQUIVO
-        ImageIO.write(novaImagem, "png", new File(nomeArquivo));
-
+        File directory = new File("saida/");
+        if (directory.exists() || directory.mkdir()){
+            ImageIO.write(novaImagem, "png", new File(nomeArquivo));
+        }
     }
 }
 
