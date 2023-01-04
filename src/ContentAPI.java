@@ -2,7 +2,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class ImDbAPI{
+public class ContentAPI {
 
     public String Top250Movies() throws IOException{
         Properties key = getKey(); // Atribui o conteúdo
@@ -17,6 +17,11 @@ public class ImDbAPI{
     public String MostPopularTVs() throws IOException{
         Properties key = getKey(); // Atribui o conteúdo
         return key.getProperty("prop.urlMostPopularTVs") + key.getProperty("prop.keyMostPopularTVs");
+    }
+
+    public String UrlNasa() throws IOException {
+        Properties key = getKey(); // Atribui o conteúdo
+        return key.getProperty("prop.urlNasa") + key.getProperty("prop.keyNasa") + key.getProperty("prop.dateNasa");
     }
 
     public Properties getKey() throws IOException {

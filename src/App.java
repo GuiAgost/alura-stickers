@@ -18,28 +18,35 @@ public class App {
             System.out.println("1 - Top250Movies");
             System.out.println("2 - MostPopularMovies");
             System.out.println("3 - MostPopularTVs");
+            System.out.println("4 - Nasa Imagem");
             opcao = input.nextInt();
 
             // FAZ CONEXÃO E BUSCA OS DADOS GSON
-            ImDbAPI imDbAPI = new ImDbAPI();
+            ContentAPI contentUrl = new ContentAPI();
             url = switch (opcao) {
-                case 1 -> imDbAPI.Top250Movies();
-                case 2 -> imDbAPI.MostPopularMovies();
-                case 3 -> imDbAPI.MostPopularTVs();
+                case 1 -> contentUrl.Top250Movies();
+                case 2 -> contentUrl.MostPopularMovies();
+                case 3 -> contentUrl.MostPopularTVs();
+                case 4 -> contentUrl.UrlNasa();
                 default -> throw new IllegalStateException("Unexpected value: " + opcao);
             };
 
-            // EXTRAI OS DADOS GSON
-            List<Map<String, String>> listFilms = ExtractorImDbAPI.getFilms(url);
+            // EXTRAI OS DADOS GSON IMDB
+            List<Map<String, String>> listDeConteudo = CLienteHttp.getContents(url);
+            // EXTRAI OS DADOS GSON NASA
+            //
 
             // EXIBIR E MANIPULAR OS DADOS
             GeradoraDeFigurinhas geradora = new GeradoraDeFigurinhas();
-            for (Map<String, String> films : listFilms) {
+            //for (Map<String, String> films : listFilms) { // Caso queira pegar todos os filmes
+            for (int i=0; i < 10; i++) {
+                Map<String, String> conteudo = listDeConteudo.get(i);
 
-                String urlImagem = films.get("image");
-                //String urlAterado = urlImagem.substring(0,116) + ".jpg";
-                String titulo = films.get("title");
-                String classificacao = films.get("imDbRating");
+                String urlImagem = conteudo.get("image");
+                //String urlImagem  = conteudo.get("image").substring(0,116) + ".jpg";
+                //String urlImagem  = conteudo.get("image").replaceAll("(@+)(.*).jpg$","$1.jpg");
+                String titulo = conteudo.get("title");
+                String classificacao = conteudo.get("imDbRating");
 
                 // PARA GERAR A IMAGEM FIGURINHA
                 InputStream inputStream = new URL(urlImagem).openStream(); // A PARTIR DA URL DA IMAGEM
@@ -52,13 +59,13 @@ public class App {
 
                 float numberStar = (float) Double.parseDouble(classificacao);
                 // SE A NOTA FOR VAZIA
-                if (films.get("imDbRating").isEmpty()) {
+                if (conteudo.get("imDbRating").isEmpty()) {
                     System.out.println("\u001b[30m\u001b[1m\u001b[4mClassificação Geral: 0.0" + " \u001b[m\u001B[33m\u001b[m");
                     System.out.println(TERRIBLE);
 
                 } else {
                     System.out.println("\u001b[30m\u001b[1m\u001b[4mClassificação Geral: " + classificacao + " \u001b[m\u001B[33m\u001b[m");
-                    for (int i = 1; i <= Math.abs(numberStar); i++) {
+                    for (i = 1; i <= Math.abs(numberStar); i++) {
                         System.out.print(STAR_YELOW);
 
                     }
