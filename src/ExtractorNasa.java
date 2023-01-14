@@ -5,8 +5,7 @@ import java.util.Map;
 
 public class ExtractorNasa {
 
-    public List<Conteudo> extraiConteudos(String gson) throws IOException, InterruptedException {
-
+    public static List<Conteudo> extraiConteudos(String gson) throws IOException, InterruptedException {
         List<Map<String, String>> listDeConteudo = CLienteHttp.getContents(gson);
         List<Conteudo> conteudos = new ArrayList<>();
 
