@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class App {
-    private static final String STAR_YELOW = "\u001b[m\u001B[33m\u2605\u001b[m";
+    private static final String STAR_YELOW = "\u001b[m\u001B[33m★\u001b[m";
     private static final String TERRIBLE = "\u001b[m\u001B[33m\uD83D\uDC4E";
 
     public static void main(String[] args) throws Exception {
@@ -17,7 +17,6 @@ public class App {
             System.out.println("1 - Top250Movies");
             System.out.println("2 - MostPopularMovies");
             System.out.println("3 - MostPopularTVs");
-            System.out.println("4 - Nasa Imagem");
             opcao = input.nextInt();
 
             // FAZ CONEXÃO E BUSCA OS DADOS GSON
@@ -26,15 +25,11 @@ public class App {
                 case 1 -> contentUrl.Top250Movies();
                 case 2 -> contentUrl.MostPopularMovies();
                 case 3 -> contentUrl.MostPopularTVs();
-                case 4 -> contentUrl.UrlNasa();
                 default -> throw new IllegalStateException("Unexpected value: " + opcao);
             };
 
             // EXTRAI OS DADOS GSON IMDB
             List<Map<String, String>> listDeConteudo = CLienteHttp.getContents(url);
-
-            // EXTRAI OS DADOS GSON NASA
-            //List<Conteudo> listDeConteudo = ExtractorNasa.extraiConteudos(url);
 
             GeradoraDeFigurinhas geradora = new GeradoraDeFigurinhas();
 
