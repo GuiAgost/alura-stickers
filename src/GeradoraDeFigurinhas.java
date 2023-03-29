@@ -10,14 +10,12 @@ public class GeradoraDeFigurinhas {
     public void cria(InputStream inputStream, String nomeArquivo) throws Exception{
 
         // LEITURA DA IMAGEM
-        //InputStream inputStream = new FileInputStream(new File("entrada/filme-maior.jpg")); // NESSE CASO, CRIAR A PASTA "ENTRADA" QUE CONTENHA IMAGEM
-        //InputStream inputStream = new URL("https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg").openStream(); // A PARTIR DA URL DA IMAGEM
         BufferedImage imagemOriginal = ImageIO.read(inputStream);
 
         // CRIA UMA NOVA IMAGEM COM MEMÓRIA COM TRANSPARÊNCIA E TAMANHO NOVO
         int largura = imagemOriginal.getWidth();
         int altura = imagemOriginal.getHeight();
-        int novaAltura = altura + 70;
+        int novaAltura = altura + 200;
         BufferedImage novaImagem = new BufferedImage(largura, novaAltura, BufferedImage.TRANSLUCENT);
 
         newImage(imagemOriginal, novaAltura, novaImagem);
@@ -30,15 +28,14 @@ public class GeradoraDeFigurinhas {
         configureFont(novaAltura, graphics);
     }
 
-    // CONFIGURA A FONTE E ESCREVE UMA PAAVRA NA NOVA IMAGEM
+    // CONFIGURA A FONTE E ESCREVE UMA PALAVRA NA NOVA IMAGEM
     private static void configureFont(int novaAltura, Graphics2D graphics) throws FontFormatException, IOException {
-        //Font font = new Font(Font.SANS_SERIF, Font.BOLD, 14);
         Font font = Font.createFont(Font.ROMAN_BASELINE, new File("fonts/ComicNeueSansID.ttf"))
-                .deriveFont(Font.PLAIN, 14);
+                .deriveFont(Font.PLAIN, 80);
         graphics.setColor(Color.GREEN);
         graphics.setFont(font);
 
-        graphics.drawString("TOPZERA", 35, novaAltura - 50);
+        graphics.drawString("TOPZERA", 200, novaAltura - 100);
     }
 
     // CRIA NOVO DIRETÓRIO E SALVA A IMAGEM
@@ -49,4 +46,3 @@ public class GeradoraDeFigurinhas {
         }
     }
 }
-// https://unicode.org/emoji/charts/full-emoji-list.html

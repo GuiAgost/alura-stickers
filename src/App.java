@@ -50,9 +50,8 @@ public class App {
 
                 // EXIBE O TITULO, URL DA IMAGEM E A CLASSIFICAÇÃO
                 System.out.println("\u001b[32;1m\u001b[4mTítulo:\u001b[m " + "\u001b[36;1m" + titulo + "\u001b[m");
-                //System.out.println("\u001b[34;1m\u001b[4mImagem:\u001b[m " + urlImagem);
 
-                // SE A CLASSIFICAÇÃO VAZIA, RETORNA 0.0F, PARA NÃO CAUSAR EXCEPTION
+                // SE A CLASSIFICAÇÃO VAZIA, RETORNA 0.0F
                 float numberStar = Float.parseFloat(classificacao.isEmpty() ? String.valueOf(0.0F) : classificacao);
 
                 // SE A NOTA FOR VAZIA

@@ -13,3 +13,5 @@ Consumir a API do IMDb e exibir:
 Inicialmente, é feito o cadastro no site [IMDb API](https://imdb-api.com/api) para obter a chave.
 
 Com a chave obtida, é criado o arquivo de configuração key.properties para a fim de separar o código.
+
+Texto ainda a ser feito duraante desenvolvimento...
