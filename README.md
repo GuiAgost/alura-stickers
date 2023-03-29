@@ -27,7 +27,7 @@ Inicialmente, é feito o cadastro no site [IMDb API](https://imdb-api.com/api) p
 
 # Resultado da Aula 01
 
-<p align="center"><img src="file:///D:/Pictures/Alura/resultadoAula1.jpg" width="400" height="800"></p>
+<p align="center"><img width="300" alt="casosDeUso" src="https://im.ge/i/IsGIv9"></p>
 
 ## Aula 02 -  GERANDO FIGURINHAS PARA WHATSAPP
 
