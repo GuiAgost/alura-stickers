@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -7,7 +8,7 @@ import javax.imageio.ImageIO;
 
 public class GeradoraDeFigurinhas {
 
-    public void cria(InputStream inputStream, String nomeArquivo) throws Exception{
+    public void cria(InputStream inputStream, String nomeArquivo, Float classificacao) throws Exception{
 
         // LEITURA DA IMAGEM
         BufferedImage imagemOriginal = ImageIO.read(inputStream);
@@ -18,24 +19,41 @@ public class GeradoraDeFigurinhas {
         int novaAltura = altura + 200;
         BufferedImage novaImagem = new BufferedImage(largura, novaAltura, BufferedImage.TRANSLUCENT);
 
-        newImage(imagemOriginal, novaAltura, novaImagem);
+        newImage(imagemOriginal, novaAltura, largura, novaImagem, classificacao);
         directory(nomeArquivo, novaImagem);
     }
     // COPIAR A IMAGEM ORIGINAL PRA NOVA IMAGEM (EM MEMÓRIA)
-    private static void newImage(BufferedImage imagemOriginal, int novaAltura, BufferedImage novaImagem) throws FontFormatException, IOException {
+    private static void newImage(BufferedImage imagemOriginal, int novaAltura, int largura, BufferedImage novaImagem, Float classificacao) throws FontFormatException, IOException {
         Graphics2D graphics = (Graphics2D) novaImagem.getGraphics();
         graphics.drawImage(imagemOriginal, 0, 0, null);
-        configureFont(novaAltura, graphics);
+        configureFont(novaAltura, largura, graphics, classificacao);
     }
 
     // CONFIGURA A FONTE E ESCREVE UMA PALAVRA NA NOVA IMAGEM
-    private static void configureFont(int novaAltura, Graphics2D graphics) throws FontFormatException, IOException {
+    private static void configureFont(int novaAltura, int largura, Graphics2D graphics, Float classificacao) throws FontFormatException, IOException {
         Font font = Font.createFont(Font.ROMAN_BASELINE, new File("fonts/ComicNeueSansID.ttf"))
                 .deriveFont(Font.PLAIN, 80);
         graphics.setColor(Color.GREEN);
         graphics.setFont(font);
 
-        graphics.drawString("TOPZERA", 200, novaAltura - 100);
+        String palavra = "";
+
+        if (classificacao >= 9) {
+            palavra = "TOPZERA";
+        } else if (classificacao < 9) {
+            palavra = "MUITO BOM";
+        } else if (classificacao <= 7){
+            palavra = "BOM";
+        } else if(classificacao <=5) {
+            palavra = "MUITO RUIM";
+        }
+
+        FontMetrics fontMetrics = graphics.getFontMetrics();
+        Rectangle2D tam = fontMetrics.getStringBounds(palavra, graphics);
+        int larguraTexto = (int) tam.getWidth();
+
+        int novaLargura = (largura - larguraTexto) / 2;
+        graphics.drawString(palavra, novaLargura, novaAltura - 100);
     }
 
     // CRIA NOVO DIRETÓRIO E SALVA A IMAGEM

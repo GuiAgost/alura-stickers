@@ -38,24 +38,23 @@ public class App {
             //for (int i=0; i < 10; i++) {
                 //Map<String, String> conteudo = listDeConteudo.get(i);
 
-                String urlImagem = conteudo.get("image");
-                //String urlImagem  = conteudo.get("image").substring(0,116) + ".jpg";
-                //String urlImagem  = conteudo.get("image").replaceAll("(@+)(.*).jpg$","$1.jpg");
+//                String urlImagem = conteudo.get("image");
+//                String urlImagem  = conteudo.get("image").substring(0,116) + ".jpg";
+                String urlImagem  = conteudo.get("image").replaceAll("(@+)(.*).jpg$","$1.jpg");
                 String titulo = conteudo.get("title");
                 String classificacao = conteudo.get("imDbRating");
 
                 // PARA GERAR A IMAGEM FIGURINHA
                 InputStream inputStream = new URL(urlImagem).openStream(); // A PARTIR DA URL DA IMAGEM
-                geradora.cria(inputStream, "saida/" + titulo + ".png");
 
                 // EXIBE O TITULO, URL DA IMAGEM E A CLASSIFICAÇÃO
                 System.out.println("\u001b[32;1m\u001b[4mTítulo:\u001b[m " + "\u001b[36;1m" + titulo + "\u001b[m");
 
                 // SE A CLASSIFICAÇÃO VAZIA, RETORNA 0.0F
                 float numberStar = Float.parseFloat(classificacao.isEmpty() ? String.valueOf(0.0F) : classificacao);
-
+                geradora.cria(inputStream, "saida/" + titulo + ".png", numberStar);
                 // SE A NOTA FOR VAZIA
-                if (conteudo.get("imDbRating").isEmpty()) {
+                if (classificacao.isEmpty()) {
                     System.out.println("\u001b[30m\u001b[1m\u001b[4mClassificação Geral: 0.0" + " \u001b[m\u001B[33m\u001b[m");
                     System.out.println(TERRIBLE);
                 } else {
