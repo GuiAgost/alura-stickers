@@ -19,18 +19,19 @@ public class App {
             System.out.println("3 - MostPopularTVs");
             opcao = input.nextInt();
 
-            // FAZ CONEXÃO E BUSCA OS DADOS GSON
-            ContentAPI contentUrl = new ContentAPI();
+            // FAZ CONEXÃO E CARREGA O CONTEÚDO
+            ClienteHttp clienteHttp = new ClienteHttp();
             url = switch (opcao) {
-                case 1 -> contentUrl.Top250Movies();
-                case 2 -> contentUrl.MostPopularMovies();
-                case 3 -> contentUrl.MostPopularTVs();
+                case 1 -> clienteHttp.Top250Movies();
+                case 2 -> clienteHttp.MostPopularMovies();
+                case 3 -> clienteHttp.MostPopularTVs();
                 default -> throw new IllegalStateException("Unexpected value: " + opcao);
             };
 
             // EXTRAI OS DADOS GSON IMDB
-            List<Map<String, String>> listDeConteudo = CLienteHttp.getContents(url);
+            List<Map<String, String>> listDeConteudo = ContentAPI.getContents(url);
 
+            // GERA FIGURINHAS
             GeradoraDeFigurinhas geradora = new GeradoraDeFigurinhas();
 
             // EXIBIR E MANIPULAR OS DADOS

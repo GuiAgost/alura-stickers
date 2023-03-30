@@ -1,28 +1,26 @@
-import java.io.FileInputStream;
+import com.google.gson.Gson;
+
 import java.io.IOException;
-import java.util.Properties;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.util.List;
+import java.util.Map;
 
 public class ContentAPI {
 
-    public String Top250Movies() throws IOException{
-        Properties key = getKey(); // Atribui o conteúdo
-        return key.getProperty("prop.urlTop250Movies") + key.getProperty("prop.keyTop250Movies");
+    protected static List<Map<String, String>> getContents(String url) throws IOException, InterruptedException {
+        Gson gson = new Gson();
+        Movies conteudo = gson.fromJson(getBody(url), Movies.class);
+        return conteudo.getItems();
     }
 
-    public String MostPopularMovies() throws IOException{
-        Properties key = getKey(); // Atribui o conteúdo
-        return key.getProperty("prop.urlMostPopularMovies") + key.getProperty("prop.keyMostPopularMovies");
-    }
-
-    public String MostPopularTVs() throws IOException{
-        Properties key = getKey(); // Atribui o conteúdo
-        return key.getProperty("prop.urlMostPopularTVs") + key.getProperty("prop.keyMostPopularTVs");
-    }
-
-    public Properties getKey() throws IOException {
-        Properties key = new Properties(); // Instancia a classe Properties
-        FileInputStream prop = new FileInputStream("./key.properties"); // Busca o arquivo
-        key.load(prop); // Carrega o conteúdo
-        return key;
+     protected static String getBody(String url) throws IOException, InterruptedException {
+        URI endereco = URI.create(url);
+        var client = HttpClient.newHttpClient();
+        var request = HttpRequest.newBuilder(endereco).GET().build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
     }
 }
