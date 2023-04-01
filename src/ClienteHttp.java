@@ -19,6 +19,11 @@ public class ClienteHttp {
         return key.getProperty("prop.urlMostPopularTVs") + key.getProperty("prop.keyMostPopularTVs");
     }
 
+    public String Nasa() throws IOException{
+        Properties key = getKey(); // Atribui o conteúdo
+        return key.getProperty("prop.urlNasa") + key.getProperty("prop.keyNasa") + key.getProperty("prop.dateNasa");
+    }
+
     public Properties getKey() throws IOException {
         Properties key = new Properties(); // Instancia a classe Properties
         FileInputStream prop = new FileInputStream("./key.properties"); // Busca o arquivo

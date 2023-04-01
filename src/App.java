@@ -17,6 +17,7 @@ public class App {
             System.out.println("1 - Top250Movies");
             System.out.println("2 - MostPopularMovies");
             System.out.println("3 - MostPopularTVs");
+            System.out.println("4 - NASA");
             opcao = input.nextInt();
 
             // FAZ CONEXÃO E CARREGA O CONTEÚDO
@@ -25,6 +26,7 @@ public class App {
                 case 1 -> clienteHttp.Top250Movies();
                 case 2 -> clienteHttp.MostPopularMovies();
                 case 3 -> clienteHttp.MostPopularTVs();
+                case 4 -> clienteHttp.Nasa();
                 default -> throw new IllegalStateException("Unexpected value: " + opcao);
             };
 
