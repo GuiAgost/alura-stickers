@@ -50,7 +50,8 @@ public class App {
             for (int i = 0; i < 3; i++) {
 
                 Conteudo conteudo = conteudos.get(i);
-                String titulo = conteudo.titulo();;
+                String nomeArquivo = conteudo.titulo();
+                String titulo = nomeArquivo.replace(":", "-");
 
                 InputStream inputStream = new URL(conteudo.urlImagem()).openStream();
 

@@ -60,7 +60,8 @@ public class App {
             // EXIBIR E MANIPULAR OS DADOS
             for (Map<String, String> filme : listaDeFilmes) {
                 String urlImagem  = filme.get("image").replaceAll("(@+)(.*).jpg$","$1.jpg");
-                String titulo = filme.get("title");
+                String nomeArquivo = filme.get("title");
+                String titulo = nomeArquivo.replace(":", "-");
                 String classificacao = filme.get("imDbRating");
                 String linkImagem = filme.get("image");
 
