@@ -75,8 +75,11 @@ API NASA se encontra nesse site [NASA API](https://api.nasa.gov/), também dever
 
 # Aula 4 - CRIANDO A PRÓPRIA API COM SPRING
 
-Construir uma API REST para expor nosso próprio conteúdo, utilizando ferramentas profissionais como o Spring Framework e um banco de dados NoSQL.
+Construir uma API REST para expor nosso próprio conteúdo, utilizando ferramentas profissionais como o Spring Framework e um banco de dados NoSQL desenvolvendo as seguintes funcionalidades:
 
+* Implementar o CRUD (Create, Read, Update e Delete);
+* Ordenar a lista conforme ranking;
+* Quandofor cadastrado através do POST, retornar o status 201;
 
 
 ## Resultado da Aula 4
