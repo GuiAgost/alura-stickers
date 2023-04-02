@@ -1,8 +1,8 @@
 # 🤿 Mergulhando em Java
 
-Este meu projeto foi realizado através da [imersão alura](https://www.alura.com.br/imersao-java/).
+Este projeto foi realizado através das aulas da [imersão alura](https://www.alura.com.br/imersao-java/).
 
-# Cronograma da Imersão Alura
+# ⏰ Cronograma da Imersão Alura
 
 * Aula 1 - Consumindo uma API de filmes com Java
 
@@ -37,9 +37,22 @@ Consumir a API do IMDb e exibir:
 * Título do filme;
 * Link de imagem;
 * Classificação do filme.
+* Decorar o terminal
 
 Inicialmente, é feito o cadastro no site [IMDb API](https://imdb-api.com/api) para obter a chave. Com a chave obtida,
-é criado o arquivo de configuração key.properties para a fim de separar o código.
+é criado o arquivo de configuração key.properties para a fim de separar o código conforme o exemplo abaixo:
+
+https://imdb-api.com/en/API/Top250Movies/[sua-chave]
+
+⚠️ troque sua-chave pela API Key obtida no IMDb!
+
+Contudo, durante a imersão, o site da IMDB ficou instável e os intrutores criaram os links alternativos, escolhi os seguintes links:
+
+* [TopMovies](https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json)
+* [MostPopularMovies](https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/MostPopularMovies.json)
+* [MostPopularTVs](https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/MostPopularTVs.json)
+
+Para decorar o terminal, segue o link de dicas: [decore o terminal](https://www.alura.com.br/artigos/decorando-terminal-cores-emojis).
 
 ## Resultado da Aula 1
 
@@ -75,26 +88,69 @@ API NASA se encontra nesse site [NASA API](https://api.nasa.gov/), também dever
 
 # Aula 4 - CRIANDO A PRÓPRIA API COM SPRING
 
-Construir uma API REST para expor nosso próprio conteúdo, utilizando ferramentas profissionais como o Spring Framework e um banco de dados NoSQL desenvolvendo as seguintes funcionalidades:
+Construir uma API REST para expor nosso próprio conteúdo, utilizando ferramentas profissionais como Spring Boot, Maven, PostMan e MongoDB. desenvolvendo as seguintes funcionalidades:
 
 * Implementar o CRUD (Create, Read, Update e Delete);
 * Ordenar a lista conforme ranking;
-* Quandofor cadastrado através do POST, retornar o status 201;
+* Quando for cadastrado através do POST, retornar o status 201;
+ 
+Para testar o funcionamento do CRUD, poderá ser baixado webservice [Postman ](https://www.postman.com/) e, após a instalação, adicionar o link do localhost gerado pelo servidor da aplicação: http://localhost:8080/linguagens e adicionando as requisições para:
 
+* GET para consulta;
+* POST para adicionar;
+* PUT para alteração;
+* DELETE para excluir.
+
+Além da acima, também poderá instalar o banco de dados não relacional [MongoDB](https://www.mongodb.com/cloud/atlas/lp/try4?utm_source=google&utm_campaign=search_gs_pl_evergreen_atlas_core_prosp-brand_gic-null_amers-br_ps-all_desktop_eng_lead&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624308&adgroup=115749706023&cq_cmp=12212624308&gclid=EAIaIQobChMImMebuqOM_gIVz0FIAB22hg1kEAAYASAAEgIP6fD_BwE) ou se preferir, acessar diretamente no site oficial para registrar e utilizar o mesmo em cloud.
 
 ## Resultado da Aula 4
+ Após codar a aplicação Spring Boot, link localhost exibiu informações de linguagens conforme a imagem:
+ 
+<p align="center"><img width="600" alt="localhost" src="https://user-images.githubusercontent.com/76624588/229383622-ecf74b7e-6006-4e53-938a-e1dfb8a6a4f9.jpg"></p> 
 
-...
+
+ ⚠️ O json está formatado para deixar o visual mais agradável, é só instalar a extensão [JSON Viewer](https://chrome.google.com/webstore/detail/json-viewer/efknglbfhoddmmfabeihlemgekhhnabb?hl=pt-BR no navegador).
+ 
+ 
+Banco de dados não relacional MongoDB retornou:
+
+<p align="center"><img width="600" alt="mongoDB" src="https://user-images.githubusercontent.com/76624588/229383800-e135799e-dc40-4b14-94bf-ae496dbd791d.jpg"></p> 
+
+Resultado do teste CRUD através do webservice Postman as seguintes requisições:
+
+1 - Consulta:
+
+<p align="center"><img width="600" alt="consultaAula4" src="https://user-images.githubusercontent.com/76624588/229383887-4f4e8e01-19b5-43fe-a4ad-476d0cf576af.jpg"></p> 
+ 
+ 2 - Consulta por id:
+ 
+<p align="center"><img width="600" alt="consultaPorIdAula4" src="https://user-images.githubusercontent.com/76624588/229383915-c717db68-355f-4622-a3c6-08386e9237b8.jpg"></p> 
+ 
+3 - Cadastro:
+
+<p align="center"><img width="600" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229383959-e4d7900d-49f0-42d2-a189-03b12eae8091.jpg"></p> 
+  
+4 - Atualização:
+
+<p align="center"><img width="600" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229384017-6b12ea43-6db7-446b-81af-c4bf45a94467.jpg"></p> 
+
+5 - Exclusão:
+
+<p align="center"><img width="600" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229384037-ffd4e87a-90e2-415d-b497-daeb3c895dce.jpg"></p>
+
 
 # Aula 5 - PUBLICANDO A NOSSA API NO CLOUD
 
-...
+<h4 align="center"> 
+    :construction:  Projeto em construção  :construction:
+</h4>
 
 ## Resultado da Aula 5
 
-...
+<h4 align="center"> 
+    :construction:  Projeto em construção  :construction:
+</h4>
 
-Texto ainda a ser feito duraante desenvolvimento...
 
 # 📁 Acesso ao projeto
 
