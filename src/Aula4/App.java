@@ -1,10 +1,10 @@
-package Aula3;
+package Aula4;
 
-import Aula3.client.ClienteHttp;
-import Aula3.extrator.API;
-import Aula3.extrator.Conteudo;
-import Aula3.extrator.ExtratorDeConteudo;
-import Aula3.generate.GeradoraDeFigurinhas;
+import Aula4.client.ClienteHttp;
+import Aula4.extrator.API;
+import Aula4.extrator.Conteudo;
+import Aula4.extrator.ExtratorDeConteudo;
+import Aula4.generate.GeradoraDeFigurinhas;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -24,14 +24,15 @@ public class App {
             System.out.println("2 - MostPopularMovies");
             System.out.println("3 - MostPopularTVs");
             System.out.println("4 - NASA");
+            System.out.println("5 - Liguagem");
             opcao = input.nextInt();
 
-            // String url = "http://localhost:8080/linguagens";
             api = switch (opcao) {
                 case 1 -> API.IMDB_TOP_250_MOVIES;
                 case 2 -> API.IMDB_MOST_POPULAR_MOVIES;
                 case 3 -> API.IMDB_MOST_POPULAR_TVs;
                 case 4 -> API.NASA;
+                case 5 -> API.LINGUAGEM;
                 default -> throw new IllegalStateException("Unexpected value: " + opcao);
             };
 
