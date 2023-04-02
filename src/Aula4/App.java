@@ -19,22 +19,8 @@ public class App {
             API api;
 
             // MENU
-            System.out.println("*=========Escolha sua imDbAPI=========");
-            System.out.println("1 - Top250Movies");
-            System.out.println("2 - MostPopularMovies");
-            System.out.println("3 - MostPopularTVs");
-            System.out.println("4 - NASA");
-            System.out.println("5 - Liguagem");
-            opcao = input.nextInt();
-
-            api = switch (opcao) {
-                case 1 -> API.IMDB_TOP_250_MOVIES;
-                case 2 -> API.IMDB_MOST_POPULAR_MOVIES;
-                case 3 -> API.IMDB_MOST_POPULAR_TVs;
-                case 4 -> API.NASA;
-                case 5 -> API.LINGUAGEM;
-                default -> throw new IllegalStateException("Unexpected value: " + opcao);
-            };
+            System.out.println("*=========API de linguagens=========");
+            api = API.LINGUAGEM;
 
             String url = api.getUrl();
             ExtratorDeConteudo extrator = api.getExtrator();
