@@ -14,6 +14,21 @@ Este meu projeto foi realizado através da [imersão alura](https://www.alura.co
 
 * Aula 5 - Publicando nossa API na Cloud
 
+## 👨‍🏫 Professores
+
+* Paulo Silveira
+* Alexandre Aquiles
+* Jacqueline Oliveira
+
+## ✔️ Técnicas e tecnologias utilizadas
+
+- ``Java 17``
+- ``InteliJ IDEA``
+- ``Paradigma de orientação a objetos``
+- ``Spring Boot``
+- ``MongoDB``
+- ``Postman``
+
 # Aula 1 - CONSUMINDO UMA API DE FILMES COM JAVA
 
 Consumir a API do IMDb e exibir:
@@ -58,11 +73,11 @@ API NASA se encontra nesse site [NASA API](https://api.nasa.gov/), também dever
 
 <p align="center"><img width="400" alt="resultadoAula1" src="https://user-images.githubusercontent.com/76624588/229364259-fe0e0a4e-88ce-4101-b140-85687949a44c.png"></p>
 
-...
-
 # Aula 4 - CRIANDO A PRÓPRIA API COM SPRING
 
-...
+Construir uma API REST para expor nosso próprio conteúdo, utilizando ferramentas profissionais como o Spring Framework e um banco de dados NoSQL.
+
+
 
 ## Resultado da Aula 4
 
@@ -72,8 +87,22 @@ API NASA se encontra nesse site [NASA API](https://api.nasa.gov/), também dever
 
 ...
 
-## Resultado da Aula 3
+## Resultado da Aula 5
 
 ...
 
 Texto ainda a ser feito duraante desenvolvimento...
+
+# 📁 Acesso ao projeto
+
+Você poderá acessar neste projeto [alura-stickers](https://github.com/GuiAgost/alura-stickers) e baixar conforme a imagem:
+
+<p align="center"><img width="650" alt="exemplo" src="https://user-images.githubusercontent.com/76624588/229376907-8e315579-1088-434c-9298-9c006e017feb.png"></p>
+
+Ou se preferir, poderá também utilizar o git baixando o projeto para seu repositório.
+
+# 🛠️ Abrir e rodar o projeto
+
+Poderá abrir o projeto através IDE de sua preferência (Vscode, Intellij IEDA, Eclipse...), após, é só dar o run!! 😀
+
+⚠️ O projeto linguagens-api está dentro do pacote da "Aula 4" e deverá ser separado, pois se trata do projeto spring boot web.
