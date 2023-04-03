@@ -104,7 +104,7 @@ Para testar o funcionamento do CRUD, poderá ser baixado webservice [Postman ](h
 Além da acima, também poderá instalar o banco de dados não relacional [MongoDB](https://www.mongodb.com/cloud/atlas/lp/try4?utm_source=google&utm_campaign=search_gs_pl_evergreen_atlas_core_prosp-brand_gic-null_amers-br_ps-all_desktop_eng_lead&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624308&adgroup=115749706023&cq_cmp=12212624308&gclid=EAIaIQobChMImMebuqOM_gIVz0FIAB22hg1kEAAYASAAEgIP6fD_BwE) ou se preferir, acessar diretamente no site oficial para registrar e utilizar o mesmo em cloud.
 
 ## Resultado da Aula 4
- Após codar a aplicação Spring Boot, link localhost exibiu informações de linguagens conforme a imagem:
+ Foi gerado projeto linguagens-api através do link [spring initializer](https://start.spring.io/). Após codar a aplicação Spring Boot, o link localhost exibiu informações de linguagens conforme a imagem:
  
 <p align="center"><img width="600" alt="localhost" src="https://user-images.githubusercontent.com/76624588/229383622-ecf74b7e-6006-4e53-938a-e1dfb8a6a4f9.jpg"></p> 
 
@@ -168,4 +168,4 @@ Ou se preferir, poderá também utilizar o git baixando o projeto para seu repos
 
 Poderá abrir o projeto através IDE de sua preferência (Vscode, Intellij IEDA, Eclipse...), após, é só dar o run!! 😀
 
-⚠️ O projeto linguagens-api está dentro do pacote da "Aula 4" e deverá ser separado, pois se trata do projeto spring boot web.
+⚠️ O projeto linguagens-api está dentro do pacote da "Aula 4", deverá ser separado do projeto separado do alura-stickers.
