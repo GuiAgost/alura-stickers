@@ -138,6 +138,10 @@ Resultado do teste CRUD através do webservice Postman as seguintes requisiçõe
 
 <p align="center"><img width="600" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229384037-ffd4e87a-90e2-415d-b497-daeb3c895dce.jpg"></p>
 
+Agora, vamos para projeto alura-stickers para gerar as figurinhas de linguagens. Para isso, foi necessária algumas mudanças como a remoção de api IMDB e da NASA e deixar somente API de linguagens conforme o projeto linguagens-api desenvolvido. Além disso, foi necessária o redimensionamento da imagem e posicionamento da palavra abaixo da figurinha. Resultou as seguintes figurinhas:
+
+<p align="center">
+<img  width="150" heigth="250" alt="java" src="https://user-images.githubusercontent.com/76624588/229385915-63fd5187-f4a5-4d38-ab72-9d325ee2ffc0.png"></img><img width="150" heigth="250" alt="c#" src="https://user-images.githubusercontent.com/76624588/229386020-2faaeaf2-403b-4535-bb05-c772a154449e.png"></img><img width="150" heigth="250" alt="python" src="https://user-images.githubusercontent.com/76624588/229386035-b54714b0-48e3-4852-85e3-c8fcef639892.png"></img></p>
 
 # Aula 5 - PUBLICANDO A NOSSA API NO CLOUD
 
