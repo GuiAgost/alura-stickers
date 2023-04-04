@@ -145,16 +145,61 @@ Agora, vamos para projeto alura-stickers para gerar as figurinhas de linguagens.
 
 # Aula 5 - PUBLICANDO A NOSSA API NO CLOUD
 
-<h4 align="center"> 
-    :construction:  Projeto em construção  :construction:
-</h4>
+Nesta última aula, tornamos nossa aplicação acessível por qualquer pessoa, fazendo o deploy na nuvem. Além disso, vamos gerar figurinhas a partir do conteúdo dessa nossa API.
 
-## Resultado da Aula 5
+Foram realizados passo a passo os seguintes:
 
-<h4 align="center"> 
-    :construction:  Projeto em construção  :construction:
-</h4>
+1° - Executar o comando "package" para gerar o arquivo .jar:
 
+<p align="center"><img width="600" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229659469-2352208c-2a89-4661-96f9-1a6902dd975e.png"></p> 
+
+Após isso, gerou dentro da pasta target, um arquivo jar chamado linguagens-api-0.0.1-SNAPSHOT.jar:
+
+<p align="center"><img width="250" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229659543-449ced16-c4fc-49ea-9436-334963b27792.png"></p>
+
+2° - Realizar conteiner no Docker, copiar o seguinte comando e ir no prompt comando da pasta target do projeto e executar:
+
+<p align="center"><img width="600" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229659598-48029a1a-e5ad-44e8-965b-108e4d788b45.png"></p>
+
+Assim, foi gerado a imagem e conteiner:
+
+<p align="center"><img width="600" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229659734-c3241919-8a6f-48c7-975b-64026b788a7f.png"></p>
+
+3° - Criar o docker file workspace no projeto:
+
+<p align="center"><img width="600" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229659793-092f8ffd-1cd1-4922-9770-fc3e2ec5262d.png"></p>
+
+4° - Construir a imagem, executando o comando Docker Images: Build image
+
+Após o comando, foi criado o Docker Hub:
+
+<p align="center"><img width="400" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229659896-73f1661e-cda1-409e-b41d-14112efa5c7a.png"></p>
+
+Na sequencia, na Images -> inguagens-api -> latest e clicar no botão direito e clique em "push":
+
+<p align="center"><img width="400" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229659928-052ef6b4-b57e-4a04-8519-19ead58b81a0.png"></p>
+
+5° - Ir no Fly.io e copiar o comando e executar no powershell:
+
+<p align="center"><img width="400" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229660006-aa888e50-de0f-40c4-af59-ee72562fe130.png"></p>
+
+6° - Após, ir no Sign In copiar o comando e executar no powershell para autenticação:
+
+<p align="center"><img width="400" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229660088-57c76048-54e0-41c2-b2e7-1ae4eb72de1b.png"></p>
+
+7° - Feito isso, ir na pasta do projeto linguagens-api, no powershell, para subir o deploy seguindo o exemplo da sequencia de comandos abaixo:
+
+<p align="center"><img width="600" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229660132-c865acc0-142d-4366-8f78-f83664df5e4f.png"></p>
+
+Criado o arquivo:
+
+<p align="center"><img width="600" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229660149-1d8c32c5-5855-4770-a41f-549e2095de0e.png"></p>
+
+E no dashboard do fly.io:
+
+<p align="center"><img width="600" alt="cadastroAula4" src="https://user-images.githubusercontent.com/76624588/229660190-e50d1c03-bbfd-4255-8217-d99698276efa.png"></p>
+
+🙌 Pronto!! A aplicação já está no ar e pronto para acessar!! 🚀
 
 # 📁 Acesso ao projeto
 
@@ -167,5 +212,3 @@ Ou se preferir, poderá também utilizar o git baixando o projeto para seu repos
 # 🛠️ Abrir e rodar o projeto
 
 Poderá abrir o projeto através IDE de sua preferência (Vscode, Intellij IEDA, Eclipse...), após, é só dar o run!! 😀
-
-⚠️ O projeto linguagens-api está dentro do pacote da "Aula 4", deverá ser separado do projeto separado do alura-stickers.
