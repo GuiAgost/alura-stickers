@@ -2,7 +2,7 @@ package Aula5.extrator;
 
 public enum API {
 
-    LINGUAGEM("http://localhost:8080/linguagens", new ExtratorDeConteudoDaLinguagem());
+    LINGUAGEM("https://gui-linguagens-alura.fly.dev/linguagens", new ExtratorDeConteudoDaLinguagem());
 
     private final String url;
     private final ExtratorDeConteudo extrator;
