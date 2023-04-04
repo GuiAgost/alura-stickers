@@ -1,4 +1,4 @@
-package Aula4;
+package Aula5;
 
 import Aula4.client.ClienteHttp;
 import Aula4.extrator.API;
@@ -16,7 +16,6 @@ public class App {
     public static void main(String[] args) throws Exception {
         API api;
 
-        // MENU
         System.out.println("*=========API de linguagens=========");
         api = API.LINGUAGEM;
 

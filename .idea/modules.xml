@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/alura-stickers.iml" filepath="$PROJECT_DIR$/alura-stickers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/Aula4/linguagens-api/linguagens-api.iml" filepath="$PROJECT_DIR$/src/Aula4/linguagens-api/linguagens-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/Aula5/linguagens-api/linguagens-api (1).iml" filepath="$PROJECT_DIR$/src/Aula5/linguagens-api/linguagens-api (1).iml" />
     </modules>
   </component>
 </project>
